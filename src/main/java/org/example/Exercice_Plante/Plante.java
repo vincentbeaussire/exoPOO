@@ -39,6 +39,6 @@ public class Plante {
 
     @Override
     public String toString() {
-        return "La plante : " + nom + " à une hauteur de " + hauteur + " et ses feuilles sont " + couleur_feuilles;
+        return "La plante : " + nom + " à une hauteur de " + hauteur + " cm, ses feuilles sont " + couleur_feuilles + " et sa circonférence est de : " + c_tronc + " cm.";
     }
 }
