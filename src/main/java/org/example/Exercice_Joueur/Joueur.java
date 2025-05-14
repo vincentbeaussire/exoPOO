@@ -1,0 +1,53 @@
+package org.example.Exercice_Joueur;
+
+public class Joueur {
+    private String nom;
+    private int niveau;
+    private int pts_xp;
+
+    public Joueur(String nom, int niveau, int pts_xp) {
+        this.nom = nom;
+        this.niveau = niveau;
+        this.pts_xp = pts_xp;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public int getNiveau() {
+        return niveau;
+    }
+
+    public void setNiveau(int niveau) {
+        this.niveau = niveau;
+    }
+
+    public int getPts_xp() {
+        return pts_xp;
+    }
+
+    public void setPts_xp(int pts_xp) {
+        this.pts_xp = pts_xp;
+    }
+
+    public void effectuerUneQuete() {
+        pts_xp += 10;
+    }
+
+    @Override
+    public String toString() {
+        return "Le joueur " + nom + " effectue la quête numéro " + niveau + " et il a " + pts_xp;
+    }
+
+    public void niveau_joueur() {
+        if (pts_xp > 100) {
+            niveau += pts_xp;
+            pts_xp = 0;
+        }
+    }
+}
