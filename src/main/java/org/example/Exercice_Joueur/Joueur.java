@@ -41,7 +41,7 @@ public class Joueur {
 
     @Override
     public String toString() {
-        return "Le joueur " + nom + " effectue la quête numéro " + niveau + " et il a " + pts_xp;
+        return "Le joueur " + this.nom + " effectue la quête numéro " + this.niveau + " et il a " + this.pts_xp + " points d'xp";
     }
 
     public void niveau_joueur() {

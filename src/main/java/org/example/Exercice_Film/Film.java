@@ -1,12 +1,14 @@
 package org.example.Exercice_Film;
 
+import java.time.LocalDate;
+
 public class Film {
     private String titre;
     private String realisateur;
-    private int annee;
+    private LocalDate annee;
     private String genre;
 
-    public Film(String titre, String realisateur, int annee, String genre) {
+    public Film(String titre, String realisateur, LocalDate annee, String genre) {
         this.titre = titre;
         this.realisateur = realisateur;
         this.annee = annee;
@@ -29,11 +31,11 @@ public class Film {
         this.realisateur = realisateur;
     }
 
-    public int getAnnee() {
+    public LocalDate getAnnee() {
         return annee;
     }
 
-    public void setAnnee(int annee) {
+    public void setAnnee(LocalDate annee) {
         this.annee = annee;
     }
 
@@ -48,10 +50,10 @@ public class Film {
     @Override
     public String toString() {
         return "Film{" +
-                "titre='" + titre + '\'' +
-                ", realisateur='" + realisateur + '\'' +
-                ", annee=" + annee +
-                ", genre='" + genre + '\'' +
+                "titre='" + this.titre + '\'' +
+                ", realisateur='" + this.realisateur + '\'' +
+                ", annee=" + this.annee +
+                ", genre='" + this.genre + '\'' +
                 '}';
     }
 }

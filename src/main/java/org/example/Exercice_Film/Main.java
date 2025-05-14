@@ -1,9 +1,11 @@
 package org.example.Exercice_Film;
 
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
-        Film film1 = new Film("La Haine", "Mathieu Kassovitz", 1995-05-31, "Drame");
-        Film film2 = new Film("Avatar 2", "James Cameron", 2022-12-14, "Action");
+        Film film1 = new Film("La Haine", "Mathieu Kassovitz", LocalDate.of(1995, 5, 31), "Drame");
+        Film film2 = new Film("Avatar 2", "James Cameron", LocalDate.of(2022, 12, 14), "Action");
 
         System.out.println(film1);
         System.out.println(film2);

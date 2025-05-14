@@ -13,6 +13,6 @@ public class Chaise {
 
     @Override
     public String toString() {
-        return "Je suis une chaise avec " + nombre_pieds + " pied(s) en " + materiaux + " de couleur " + couleur + ".";
+        return "Je suis une chaise avec " + this.nombre_pieds + " pied(s) en " + this.materiaux + " de couleur " + this.couleur + ".";
     }
 }
