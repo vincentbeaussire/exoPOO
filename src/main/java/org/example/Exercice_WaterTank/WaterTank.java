@@ -1,57 +1,76 @@
 package org.example.Exercice_WaterTank;
 
 public class WaterTank {
-    private  int poids_vide;
-    private int capacite_max;
-    private int niveau_remplissage;
-    public static int volume_total;
+    private  int weightEmpty;
+    private int maxCapacity;
+    private int fillLevel;
+    private static int totalFillLevel = 0;
 
-    public WaterTank(int poids_vide, int capacite_max, int niveau_remplissage) {
-        this.poids_vide = poids_vide;
-        this.capacite_max = capacite_max;
-        this.niveau_remplissage = niveau_remplissage;
+    public WaterTank(int weightEmpty, int maxCapacity, int fillLevel) {
+        this.weightEmpty = weightEmpty;
+        this.maxCapacity = maxCapacity;
+        this.fillLevel = fillLevel;
+        totalFillLevel += fillLevel;
     }
 
-    public int getPoids_vide() {
-        return poids_vide;
+    public WaterTank(int weightEmpty, int maxCapacity) {
+        this.weightEmpty = weightEmpty;
+        this.maxCapacity = maxCapacity;
+        this.fillLevel = 0;
     }
 
-    public void setPoids_vide(int poids_vide) {
-        this.poids_vide = poids_vide;
+    public static int getTotalFillLevel() {
+        return totalFillLevel;
     }
 
-    public int getCapacite_max() {
-        return capacite_max;
-    }
-
-    public void setCapacite_max(int capacite_max) {
-        this.capacite_max = capacite_max;
-    }
-
-    public int getNiveau_remplissage() {
-        return niveau_remplissage;
-    }
-
-    public void setNiveau_remplissage(int niveau_remplissage) {
-        this.niveau_remplissage = niveau_remplissage;
-    }
-
-    public void remplir() {
-        volume_total += poids_vide;
-        if (volume_total > capacite_max) {
-            System.out.println("Erreur");
+    public void remplir(int qt) {
+        if (this.fillLevel+qt > maxCapacity) {
+            System.out.println("Erreur, cela va déborder");
+        } else {
+            this.fillLevel += qt;
+            totalFillLevel += qt;
         }
     }
 
-    public void vider() {
-        volume_total -= poids_vide;
-        if (volume_total < 0) {
+    public void vider(int qt) {
+        if (this.fillLevel-qt < 0) {
             System.out.println("Erreur");
+        } else {
+            this.fillLevel -= qt;
+            totalFillLevel -= qt;
         }
+    }
+
+    public int getWeightEmpty() {
+        return weightEmpty;
+    }
+
+    public void setWeightEmpty(int weightEmpty) {
+        this.weightEmpty = weightEmpty;
+    }
+
+    public int getMaxCapacity() {
+        return maxCapacity;
+    }
+
+    public void setMaxCapacity(int maxCapacity) {
+        this.maxCapacity = maxCapacity;
+    }
+
+    public int getFillLevel() {
+        return fillLevel;
+    }
+
+    public void setFilllevel(int fillLevel) {
+        this.fillLevel = fillLevel;
     }
 
     @Override
     public String toString() {
-        return "Le poids à vide est de : " + poids_vide + ", sa capacité maximale est de : " + capacite_max + ", et son niveau de remplissage actuel est de : " + volume_total + " m3.";
+        return "WaterTank{" +
+                "weightEmpty=" + weightEmpty +
+                ", maxCapacity=" + maxCapacity +
+                ", fillLevel=" + fillLevel +
+                '}';
     }
 }

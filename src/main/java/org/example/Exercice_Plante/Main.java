@@ -4,7 +4,7 @@ import org.w3c.dom.ls.LSOutput;
 
 public class Main {
     public static void main(String[] args) {
-        Plante plante = new Plante("cactus", 10, "vertes", 2);
-        System.out.println(plante);
+        Arbre arbre = new Arbre("cactus", 10, "vertes", 2);
+        System.out.println(arbre);
     }
 }
